@@ -1,7 +1,7 @@
 {
-  "name": "Runtime Loaded Widget",
-  "contextPath": "cumulocity-runtime-widget",
-  "key": "cumulocity-runtime-widget-application-key",
+  "name": "DCD Dispatch Widget",
+  "contextPath": "dcd-dispatch-runtime-widget",
+  "key": "dce-dispatch-runtime-widget-application-key",
   "contentSecurityPolicy": "default-src 'self'",
   "icon": {
     "class": "fa fa-puzzle-piece"

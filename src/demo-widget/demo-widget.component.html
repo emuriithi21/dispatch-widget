@@ -1,1 +1,136 @@
-<p class="text">{{config?.text || 'No text'}}</p>
+<style>
+    dl {
+      width: 100%;
+      overflow: hidden;
+      
+      padding: 0;
+      margin: 0
+    }
+    dt {
+      float: left;
+      width: 50%;
+      /* adjust the width; make sure the total of both is 100% */
+      
+      padding: 0;
+      margin: 0
+    }
+    dd {
+      float: left;
+      width: 50%;
+      /* adjust the width; make sure the total of both is 100% */
+     
+      padding: 0;
+      margin: 0
+    }
+    
+    </style>
+
+
+
+
+    
+<hr style = "margin-top: 2px; margin-bottom: 2px; color: black;"/>
+
+<div class="container " style="width:52rem; margin: 2rem;"  [ngClass]="{ 'collapse': alarm_active }">
+  
+
+    <div class="row d-flex justify-content-md-between" style="height: 5rem;">
+      <div class="col col-sm-5">
+        <p><strong>No Alarms to Display</strong></p>
+        
+      </div>
+      </div>
+</div>
+
+<div class="container " style="width:52rem; margin: 2rem;" id="dcd_alarm_full_body" [ngClass]="{ 'collapse': !alarm_active }">
+  
+
+  <div class="row d-flex justify-content-md-between" style="height: 5rem;">
+    <div class="col col-sm-5">
+      <p><strong>Residential Alarm </strong></p>
+      <h6>18 Nov 2021, 11:23:38 </h6>
+    </div>
+    
+    <div class="col col-sm-3">
+      <h2 class="text-danger"><strong> {{remaining_time_string}} </strong></h2>
+    </div>
+
+    <div class=" col col-sm-4">
+      
+      <button type="button" class="btn btn-block btn-default" (click)="dropdown_collapsed = !dropdown_collapsed" > Dispatch </button>
+
+    </div>
+
+  </div>
+ 
+  
+  <hr style = "margin-top: 2px; margin-bottom: 2px; color: black;"/>
+
+
+  <div id="dcdalarmbody" style="background-color: #fbfbfc;" [ngClass]="{ 'collapse': dropdown_collapsed }">
+  <div class="modal-header row">
+    <div class="col col-sm-9">
+    <h4 class="modal-title" id="dcd-modal-title"><strong> Makani 35643-55412</strong></h4>
+    </div>
+    <div class="col col-sm-3">
+    <button type="button" class="close" aria-describedby="modal-title" (click)="dropdown_collapsed = !dropdown_collapsed" >
+      <span aria-hidden="true">&times;</span>
+
+    </button>
+    </div>
+  </div>
+  <div class="modal-body">
+   
+    <dl>
+      
+      <dt>Location&nbsp;</dt>
+      <dd >Zahra Villas, Villa 10&nbsp;</dd>
+    </dl>
+    <hr style = "margin-top: 2px; margin-bottom: 2px; color: black;"/>
+    <dl>
+      <dt >District&nbsp;</dt>
+      <dd >Al Yalayis 2</dd>
+    </dl>
+    <hr style = "margin-top: 2px; margin-bottom: 2px; color: black;"/>
+    <div class="row">
+      <div class="col-xl-12"><h4 class="text-info"><strong>Recommended Fire Station</strong></h4></div>
+    </div>
+    <hr style = "margin-top: 2px; margin-bottom: 2px; color: black;"/>
+    <div class="row">
+      <div class="col-sm-12">
+        <table  class = "table table-bordered table-striped">
+          <thead>
+            <tr>
+              
+              <th scope="col">&nbsp; ID</th>
+              <th scope="col">Station Name</th>
+              <th scope="col">&nbsp;Distance</th>
+              <th scope="col">Time</th>
+              <th scope="col">Trucks on Standby&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              
+              <td>&nbsp;45</td>
+              <td>&nbsp; Al Barsha</td>
+              <td>&nbsp;8 Km</td>
+              <td>&nbsp;10:00</td>
+              <td>&nbsp;3</td>
+            </tr>
+        
+          </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    
+    <button type="button" class="btn btn-default" (click)="dispatch()">Dispatch</button>    
+  </div>
+  </div>
+  
+  </div>
+ 
+
+

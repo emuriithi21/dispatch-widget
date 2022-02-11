@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
     </c8y-form-group>
   </div>`
 })
-export class WidgetConfigDemo {
+export class WidgetConfigDCDDispatch {
     @Input() config: any = {};
 }
